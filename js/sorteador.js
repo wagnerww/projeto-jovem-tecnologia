@@ -2,25 +2,30 @@ const submeterFormulario = () => {
     const rangeInicial      = document.getElementById("rangeInicial").value;
     const rangeFinal        = document.getElementById("rangeFinal").value;
     const minhaAposta       = document.getElementById("minhaAposta").value;
-    const repetirAteAcertar = document.getElementById("repetirAteAcertar").value;
+    const repetirAteAcertar = document.getElementById("repetirAteAcertar").checked ? "S" : "N";
 
     realizarSorteio(+rangeInicial, +rangeFinal, +minhaAposta, repetirAteAcertar);
 }
 
 const realizarSorteio = (rangeInicial, rangeFinal, minhaAposta, repetirAteAcertar) => {
 
-    if(!rangeInicial) {
+    if (!rangeInicial) {
         alert('Mano pra isso bufar informa o range inicial! 🤪');
         return;
     }
 
-    if(!rangeFinal) { 
+    if (!rangeFinal) {
         alert('Mano isso bufar informa o range final! 🤪');
         return;
     }
 
-    if(rangeInicial > rangeFinal) {
+    if (rangeInicial > rangeFinal) {
         alert('Mano...o range INICIAL não pode ser maior que o FINAL! Isso não tem lógica...vlw flws 🥴');
+        return;
+    }
+
+    if ((minhaAposta > rangeFinal) || (minhaAposta < rangeInicial)) {
+        alert('Mano!!! A TUA APOSTA deve estar entre o range INICIAL e FINAL! Vai dar loop...🥴');
         return;
     }
 
