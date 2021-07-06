@@ -10,22 +10,22 @@ const submeterFormulario = () => {
 const realizarSorteio = (rangeInicial, rangeFinal, minhaAposta, repetirAteAcertar) => {
 
     if (!rangeInicial) {
-        alert('Mano pra isso bufar informa o range inicial! 🤪');
+        alert('Informe o range inicial!');
         return;
     }
 
     if (!rangeFinal) {
-        alert('Mano isso bufar informa o range final! 🤪');
+        alert('Informe o range final!');
         return;
     }
 
     if (rangeInicial > rangeFinal) {
-        alert('Mano...o range INICIAL não pode ser maior que o FINAL! Isso não tem lógica...vlw flws 🥴');
+        alert('O range INICIAL não pode ser maior que o FINAL!');
         return;
     }
 
     if ((minhaAposta > rangeFinal) || (minhaAposta < rangeInicial)) {
-        alert('Mano!!! A TUA APOSTA deve estar entre o range INICIAL e FINAL! Vai dar loop...🥴');
+        alert('A aposta deve estar entre o range INICIAL e FINAL!');
         return;
     }
 
@@ -43,14 +43,14 @@ const realizarSorteio = (rangeInicial, rangeFinal, minhaAposta, repetirAteAcerta
  
     if (numeroSorteado === minhaAposta) {
         if (repetirAteAcertar !== "S") {
-            alert(`Uauuuu PARABÉNS Merencio! Você é diferenciado...E é mesmo o "${numeroSorteado}", Acertou! 👏👏👏👏👏👏👏👏`);
+            alert(`PARABÉNS ! O número sorteado é o "${numeroSorteado}"!`);
             return;
         }
      
-    alert(`ALELUIA Merencio! Finalmente você acertou o número "${numeroSorteado}", depois de ${quantidadeDeSorteios} tentativas que fizemos por você 🤯`);
+    alert(`Finalmente! Você acertou o número "${numeroSorteado}", depois de ${quantidadeDeSorteios} tentativas que fizemos automaticamente`);
     
     } else {
-        alert(`Baaaa Merencio! Na próxima você consegue! 😬😬 ...Sem te passar a penas, mas o número sorteado foi: "${numeroSorteado}"`);
+        alert(`Baaaa! Na próxima você consegue! ...Sem te passar a penas, mas o número sorteado foi: "${numeroSorteado}"`);
     }
 }
 
