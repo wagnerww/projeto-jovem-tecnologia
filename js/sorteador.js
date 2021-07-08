@@ -55,5 +55,5 @@ const realizarSorteio = (rangeInicial, rangeFinal, minhaAposta, repetirAteAcerta
 }
 
 const novoSorteio = (rangeInicial, rangeFinal) => {
-    return (Math.floor(Math.random() * rangeFinal) + rangeInicial);
+    return (Math.floor(Math.random() * (rangeFinal - rangeInicial + 1)) + rangeInicial);
 }
